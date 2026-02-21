@@ -1,0 +1,9 @@
+# Ambiente virtuale (pesante e inutile da caricare)
+venv/
+__pycache__/
+
+# LA CHIAVE SEGRETA (Se la carichi, chiunque può usare il tuo database e farti finire il credito)
+chiave.json
+
+# File di sistema
+.DS_Store
