@@ -1,0 +1,25 @@
+name: Python Syntax Check
+
+on: [push, pull_request] # Si attiva a ogni push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # GitHub ci presta un PC Linux
+
+    steps:
+    - uses: actions/checkout@v3 # Scarica il tuo codice sul PC Linux
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install firebase-admin requests # Le librerie che hai usato
+
+    - name: Check for syntax errors
+      run: |
+        # Questo comando analizza il codice senza eseguirlo
+        python -m compileall .
