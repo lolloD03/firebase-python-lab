@@ -53,3 +53,8 @@ def leggi_sensori(soglia: float = 20.0):
         "risultati_trovati": len(filtrati),
         "dati": filtrati
     }
+
+
+@app.delete("/sensori/{sensore_id}")
+def sensori(sensore_id: str):
+    db.collection("sensori").document(sensore_id).delete()
